@@ -15,6 +15,10 @@ npm install
 chmod +x ./build.sh
 
 npm run build
+
+# run the demos
+node test/lab.js
+node test/cmyk.js
 ```
 
 # Docs
