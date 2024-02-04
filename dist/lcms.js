@@ -1,11 +1,8 @@
 /*
+ * Originally written by yoya:
  * 2018/03/06- (c) yoya@awm.jp
- * ref) https://kripken.github.io/emscripten-site/docs/api_reference/preamble.js.html#Pointer_stringify
  *
- * From:
- * https://github.com/yoya/lcms.js/
- *
- * Modularized and updated to latest ESM / EMCC by @mattdesl
+ * With modifications by @mattdesl for ES6 and updated Emscripten
  */
 
 export const LCMS_VERSION = 2160;
