@@ -1,0 +1,16 @@
+cmsOpenProfileFromMem
+cmsCloseProfile
+cmsCreate_sRGBProfile
+cmsCreateXYZProfile
+cmsCreateLab4Profile
+cmsGetProfileInfoASCII
+cmsGetColorSpace
+cmsFormatterForColorspaceOfProfile
+cmsCreateTransform
+cmsCreateProofingTransform
+cmsDeleteTransform
+cmsDoTransform
+cmsGetTransformInputFormat
+cmsGetTransformOutputFormat
+cmsReadTag
+cmsXYZ2xyY

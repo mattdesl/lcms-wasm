@@ -1,0 +1,38 @@
+{
+  "name": "lcms-wasm",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "LittleCMS in JS with WASM",
+  "main": "./dist/lcms.js",
+  "license": "MIT",
+  "author": {
+    "name": "Matt DesLauriers",
+    "url": "https://github.com/mattdesl"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.0"
+  },
+  "scripts": {
+    "minify": "npx esbuild dist/lcms.js --format=esm --minify --sourcemap --outfile=dist/lcms.min.js",
+    "build": "./build.sh && npm run minify"
+  },
+  "keywords": [
+    "lcm",
+    "lcms",
+    "cmyk",
+    "cmy",
+    "xyz",
+    "color",
+    "cms",
+    "colour",
+    "conversion"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mattdesl/lcms-wasm.git"
+  },
+  "homepage": "https://github.com/mattdesl/lcms-wasm",
+  "bugs": {
+    "url": "https://github.com/mattdesl/lcms-wasm/issues"
+  }
+}
