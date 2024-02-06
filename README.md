@@ -4,24 +4,15 @@ This is a reboot of [yoya/lcms.js](https://github.com/yoya/lcms.js/) (now severa
 
 This should work in web, Node.js, and web workers, and possibly other JavaScript environments.
 
-# Build from source
+# Install from npm
 
-Clone the repo, then:
+With npm and Node.js already installed:
 
 ```sh
-cd lcms-wasm
-git submodule update --init --recursive
-npm install
-
-# if not already runnable
-chmod +x ./build.sh
-
-npm run build
-
-# run the demos
-node test/lab.js
-node test/cmyk.js
+npm install lcms-wasm
 ```
+
+This is primarily tested against ES Modules rather than CommonJS code.
 
 # Docs
 
@@ -81,3 +72,26 @@ You can also see yoya's original demo of the lcms.js library here:
 - http://app.awm.jp/image.js/lcms.html
   - [HTML source](https://github.com/yoya/image.js/blob/5e43f1d1c3b248db764f764a1507eb9f3dd36f66/lcms.html)
   - [JS source](https://github.com/yoya/image.js/blob/5e43f1d1c3b248db764f764a1507eb9f3dd36f66/lcms.js)
+
+# Build from source
+
+Clone the repo, then:
+
+```sh
+cd lcms-wasm
+git submodule update --init --recursive
+npm install
+
+# if not already runnable
+chmod +x ./build.sh
+
+npm run build
+
+# run the demos
+node test/lab.js
+node test/cmyk.js
+```
+
+# License
+
+This code is MIT, see [LICENSE.md](./LICENSE.md). The submodule (Little-CMS) is also MIT.
