@@ -92,6 +92,10 @@ node test/lab.js
 node test/cmyk.js
 ```
 
+# Thanks
+
+Thanks to [yoya/lcms.js](https://github.com/yoya/lcms.js/) who did the heavy lifting to get this working with Emscripten in the first placea.
+
 # License
 
 This code is MIT, see [LICENSE.md](./LICENSE.md). The submodule (Little-CMS) is also MIT.
