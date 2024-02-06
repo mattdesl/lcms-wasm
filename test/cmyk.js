@@ -83,8 +83,9 @@ async function ColorProfiles(lcms) {
   // Testing CMYK [100, 50, 25, 25]
   // Expected Result: [(0, 89, 125)]
 
-  const width = 512;
-  const height = 512;
+  // Simulate a large image...
+  const width = 1024;
+  const height = 1024;
 
   const CMYK = [100, 50, 25, 25];
 

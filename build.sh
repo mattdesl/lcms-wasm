@@ -38,7 +38,3 @@ emcc \
   -O3\
   --closure 0\
   -g0
-
-# -s TOTAL_STACK=1MB\
-# -s TOTAL_MEMORY=100MB\
-  
