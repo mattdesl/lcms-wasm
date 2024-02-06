@@ -4,3 +4,6 @@ node_modules
 .DS_Store
 .npmignore
 LICENSE.md
+/Little-CMS
+/*.icc
+test/
