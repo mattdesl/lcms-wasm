@@ -20,10 +20,13 @@ import {
 async function ColorProfiles(lcms) {
   async function loadProfile(path) {
     const buf = (await readFile(path)).buffer;
-    const profile = lcms.cmsOpenProfileFromMem(
-      new Uint8Array(buf),
-      buf.byteLength
-    );
+    const u8 = new Uint8Array(buf, buf.byteOffset, buf.byteLength);
+    let profile;
+    try {
+      profile = lcms.cmsOpenProfileFromMem(u8, u8.length);
+    } catch (err) {
+      throw new Error(`could not open profile ${path}, error: ${err.message}`);
+    }
     if (!profile) throw new Error(`could not open profile ${path}`);
     return profile;
   }
