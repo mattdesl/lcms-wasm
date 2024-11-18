@@ -14,3 +14,4 @@ cmsGetTransformInputFormat
 cmsGetTransformOutputFormat
 cmsReadTag
 cmsXYZ2xyY
+malloc
