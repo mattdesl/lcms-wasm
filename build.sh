@@ -20,11 +20,12 @@ emcc \
   -o $BIN_DIR/lcms.js\
   -I $INCLUDE_DIR $SRC_DIR/*.c\
   -s WASM=1\
-  -s ENVIRONMENT=web,worker,node\
+  -s ENVIRONMENT=web,worker\
   -s MODULARIZE=1\
   -s FILESYSTEM=0\
   -s ASSERTIONS=1\
   -s EXPORT_ES6=1\
+  -s USE_ES6_IMPORT_META=0\
   -s DISABLE_EXCEPTION_CATCHING=0\
   -s USE_PTHREADS=0\
   -s EXPORT_NAME="instantiate"\
