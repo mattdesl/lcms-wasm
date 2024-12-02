@@ -12,5 +12,6 @@ cmsDeleteTransform
 cmsDoTransform
 cmsGetTransformInputFormat
 cmsGetTransformOutputFormat
+cmsGetHeaderRenderingIntent
 cmsReadTag
 cmsXYZ2xyY
