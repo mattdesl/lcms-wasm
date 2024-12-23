@@ -10,11 +10,14 @@
     "url": "https://github.com/mattdesl"
   },
   "devDependencies": {
+    "@swc/cli": "^0.5.1",
+    "@swc/core": "^1.9.2",
     "esbuild": "^0.20.0"
   },
   "scripts": {
     "minify": "npx esbuild dist/lcms.js --format=esm --minify --sourcemap --outfile=dist/lcms.min.js",
-    "build": "./build.sh && npm run minify"
+    "swc": "npx swc dist -d dist --strip-leading-paths",
+    "build": "./build.sh && npm run swc && npm run minify"
   },
   "keywords": [
     "lcm",
