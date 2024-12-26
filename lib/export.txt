@@ -16,3 +16,4 @@ cmsGetHeaderRenderingIntent
 cmsReadTag
 cmsXYZ2xyY
 malloc
+free

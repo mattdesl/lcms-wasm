@@ -69,11 +69,24 @@ test("should convert sRGB to LAB", async (t) => {
   lcms.cmsCloseProfile(outputProfile);
 
   // Expects Lab [ 35, -13, -27 ] according to Photoshop
-  const data = new Uint8ClampedArray([0, 89, 125]);
-  const nPixels = 1;
+  const pixel = [0, 89, 125];
+  const channels = pixel.length;
+  const nPixels = 1024 * 2048;
+  const data = new Uint8ClampedArray(channels * nPixels);
+  for (let i = 0; i < nPixels; i++) {
+    for (let c = 0; c < channels; c++) {
+      data[i * channels + c] = pixel[c];
+    }
+  }
+  console.time("transform");
   const labf32 = lcms.cmsDoTransform(transform, data, nPixels);
+  console.timeEnd("transform");
   const lab = [...labf32].map((c) => Math.round(c));
-  t.deepEqual(lab, [35, -13, -27], "RGB to Lab converts as expected");
+  const expected = [];
+  for (let i = 0; i < nPixels; i++) {
+    expected.push(35, -13, -27);
+  }
+  t.deepEqual(lab, expected, "RGB to Lab converts as expected");
 
   // cleanup transform
   lcms.cmsDeleteTransform(transform);
