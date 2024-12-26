@@ -25,6 +25,7 @@ emcc \
   -s FILESYSTEM=0\
   -s ASSERTIONS=1\
   -s EXPORT_ES6=1\
+  -s USE_ES6_IMPORT_META=1\
   -s DISABLE_EXCEPTION_CATCHING=0\
   -s USE_PTHREADS=0\
   -s EXPORT_NAME="instantiate"\
@@ -38,3 +39,28 @@ emcc \
   -O3\
   --closure 0\
   -g0
+
+mkdir -p tmp/
+cp lib/cjs-shim.js tmp/
+emcc \
+  -o tmp/lcms.js\
+  -I $INCLUDE_DIR $SRC_DIR/*.c\
+  -s WASM=1\
+  -s ENVIRONMENT=web,worker,node\
+  -s MODULARIZE=1\
+  -s FILESYSTEM=0\
+  -s ASSERTIONS=1\
+  -s EXPORT_ES6=0\
+  -s USE_ES6_IMPORT_META=0\
+  -s DISABLE_EXCEPTION_CATCHING=0\
+  -s USE_PTHREADS=0\
+  -s EXPORT_NAME="instantiate"\
+  -s ALLOW_MEMORY_GROWTH=1\
+  -s EXPORTED_RUNTIME_METHODS=["cwrap","ccall"]\
+  -s EXPORTED_FUNCTIONS=$exported_opt\
+  -s TOTAL_STACK=15MB\
+  --post-js lib/api.js\
+  -O3\
+  --closure 0\
+  -g0
+mv tmp/lcms.js tmp/lcms.cjs

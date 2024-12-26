@@ -12,9 +12,15 @@
   "devDependencies": {
     "esbuild": "^0.20.0"
   },
+  "exports": {
+    "import": "./dist/lcms.js",
+    "require": "./dist/lcms.cjs"
+  },
   "scripts": {
-    "minify": "npx esbuild dist/lcms.js --format=esm --minify --sourcemap --outfile=dist/lcms.min.js",
-    "build": "./build.sh && npm run minify"
+    "minify:js": "esbuild dist/lcms.js --format=esm --minify --sourcemap --outfile=dist/lcms.min.js",
+    "build:cjs": "esbuild tmp/cjs-shim.js --bundle --platform=node --format=cjs --sourcemap --outfile=dist/lcms.cjs",
+    "minify:cjs": "esbuild dist/lcms.cjs --format=cjs --minify --sourcemap --outfile=dist/lcms.min.cjs",
+    "build": "./build.sh && npm run minify:js && npm run build:cjs && npm run minify:cjs"
   },
   "keywords": [
     "lcm",

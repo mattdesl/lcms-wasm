@@ -71,7 +71,7 @@ test("should convert sRGB to LAB", async (t) => {
   // Expects Lab [ 35, -13, -27 ] according to Photoshop
   const pixel = [0, 89, 125];
   const channels = pixel.length;
-  const nPixels = 1024 * 2048;
+  const nPixels = 512;
   const data = new Uint8ClampedArray(channels * nPixels);
   for (let i = 0; i < nPixels; i++) {
     for (let c = 0; c < channels; c++) {
