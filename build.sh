@@ -31,7 +31,7 @@ emcc \
   -s ALLOW_MEMORY_GROWTH=1\
   -s EXPORTED_RUNTIME_METHODS=["cwrap","ccall"]\
   -s EXPORTED_FUNCTIONS=$exported_opt\
-  -s TOTAL_STACK=5MB\
+  -s TOTAL_STACK=15MB\
   --post-js lib/api.js\
   --extern-post-js lib/post.js\
   --extern-pre-js lib/constants.js\

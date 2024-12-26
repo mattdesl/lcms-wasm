@@ -34,5 +34,8 @@
   "homepage": "https://github.com/mattdesl/lcms-wasm",
   "bugs": {
     "url": "https://github.com/mattdesl/lcms-wasm/issues"
+  },
+  "dependencies": {
+    "tape": "^5.9.0"
   }
 }
